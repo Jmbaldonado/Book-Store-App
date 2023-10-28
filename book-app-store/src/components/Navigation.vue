@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full bg-transparent fixed top-0 left-0 right-0 transition-all ease-in duration-300">
+  <header class="w-full bg-transparent fixed top-0 left-0 right-0 transition-all ease-in duration-300 z-10">
     <nav class="py-4 lg:px-24 px-4" :class="isSticky ? 'sticky top-0 left-0 right-0 bg-blue-300': ''">
       <div class="flex justify-between items-center text-base gap-8">
         <router-link to="/" class="text-2xl font-bold text-blue-700 flex items-center gap-2">

@@ -3,6 +3,7 @@ import Home from "@/features/home/Home.vue";
 import Shop from "@/features/shop/Shop.vue";
 import About from "@/features/about/About.vue";
 import Blog from "@/features/blog/Blog.vue";
+import Book from "@/components/books/Book.vue";
 const routes = [
     {
         path: '/',
@@ -23,6 +24,10 @@ const routes = [
         path: "/blog",
         name: "Blog",
         component: Blog
+    },
+    {
+        path: "/book/:id",
+        component: Book
     }
 ]
 
