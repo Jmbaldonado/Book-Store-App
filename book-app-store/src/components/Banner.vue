@@ -16,5 +16,5 @@
   </div>
 </template>
 <script setup lang="ts">
-import BannerCard from "@/features/home/components/BannerCard.vue";
+import BannerCard from "@/components/BannerCard.vue";
 </script>
