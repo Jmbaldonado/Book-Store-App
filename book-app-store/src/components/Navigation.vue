@@ -42,8 +42,8 @@ const navigationItems = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Shop', path: '/shop' },
-  { name: 'Sell Your Book', path: '/admin/dashboard' },
-  { name: 'Blog', path: '/admin/dashboard' },
+  { name: 'Sell Your Book', path: '/' },
+  { name: 'Blog', path: '/' },
 
 ]
 
