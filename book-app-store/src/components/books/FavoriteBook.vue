@@ -1,81 +1,36 @@
 <template>
-  <div class="my-16 px-4 lg:px-24">
-    <h2 class="text-5xl text-center font-bold text-black my-5">Best Seller Books</h2>
-
-    <div>
-      <swiper
-          :slidesPerView="1"
-          :spaceBetween="10"
-          :pagination="{
-      clickable: true,
-    }"
-          :breakpoints="{
-      '640': {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      '768': {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-      '1024': {
-        slidesPerView: 5,
-        spaceBetween: 50,
-      },
-    }"
-          :modules="modules"
-          class="mySwiper w-full h-full"
-      >
-        <swiper-slide v-for="book in books" :key="book.id">
-          <BookCard
-              :bookId="book.id"
-              :imageURL="book.imageURL"
-              :title="book.title"
-              :authorName="book.authorName"
-          />
-        </swiper-slide>
-      </swiper>
+  <div class="px-4 lg:px-24 my-20 flex flex-col md:flex-row justify-between items-center gap-12">
+    <div class="md:w-1/2">
+      <img src="@/assets/images/others/favoritebook.jpg" alt="Favorite Books" class="rounded md:w-10/12">
     </div>
 
+    <div class="md:w-1/2 space-y-6">
+      <h2 class="text-5xl font-bold my-5 md:w-3/4 leading-snug">Find Your Favorite <span class="text-blue-700">Book Here!</span>
+      </h2>
+      <p class="mb-10 text-lg md:5/6"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, amet delectus deleniti dicta dolores doloribus eligendi eveniet excepturi inventore ipsum itaque nemo perferendis, praesentium quod reiciendis repellat sapiente?</span>
+      </p>
+      <div class="flex flex-col sm:flex-row justify-between gap-6 md:w-3/4 my-14">
+        <div>
+          <h3 class="text-3xl font-bold">800+</h3>
+          <p class="text-base">Book Listing</p>
+        </div>
+        <div>
+          <h3 class="text-3xl font-bold">500+</h3>
+          <p class="text-base">Registered Users</p>
+        </div>
+        <div>
+          <h3 class="text-3xl font-bold">1200+</h3>
+          <p class="text-base">PDF Downloads</p>
+        </div>
+      </div>
+      <div class="mt-10">
+        <router-link to="/shop"
+                     class="bg-blue-700 text-white font-semibold px-5 py-2 rounded hover:bg-black transition-all duration-300">
+          Explore More
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
-
-<style scoped>
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-</style>
-
 <script setup lang="ts">
-import 'swiper/css/pagination';
-import {Pagination} from 'swiper/modules';
-import {computed, onMounted, ref} from "vue";
-import {useBooksStore} from "@/stores/books";
-import BookCard from "@/components/books/BookCard.vue";
-
-const modules = ref([Pagination])
-
-const booksStore = useBooksStore();
-onMounted(booksStore.FETCH_BOOKS)
-
-const books = computed(() => booksStore.GET_BOOKS)
-
 </script>
